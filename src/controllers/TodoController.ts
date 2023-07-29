@@ -35,7 +35,7 @@ class TodoController implements IController {
     const service: TodoService = new TodoService(req)
     const todo = await service.delete()
 
-    if (todo != 1) return fail(404, [], "Todo failed to delete", res)
+    if (todo != 1) return fail(422, [], "Todo failed to delete", res)
 
     return ok(200, [], res)
   }

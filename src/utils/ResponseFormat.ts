@@ -1,10 +1,11 @@
 import { Response } from "express"
 
-export const ok = (code: number, data: object[] | object, res: Response): Response => {
+export const ok = (code: number, data: object[] | object, res: Response, message?: string): Response => {
   return res.json({
     success: true,
     code,
     data,
+    message,
   })
 }
 
